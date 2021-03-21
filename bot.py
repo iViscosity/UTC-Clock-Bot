@@ -22,6 +22,14 @@ class MyClient(discord.Client):
 		time_channel = self.get_channel(822987807743016970)
 
 		while True:
+			minutes_now = datetime.utcnow().strftime("%M")
+			print(f"Checking for minute: {minutes_now}")
+			if minutes_now.endswith("0") or minutes_now.endswith("5"):
+				break
+			
+			time.sleep(5)
+		
+		while True:
 			print('Updating!')
 			time_now = datetime.utcnow()
 			await date_channel.edit(name=f'Date: {time_now.strftime("%d/%m")}')
