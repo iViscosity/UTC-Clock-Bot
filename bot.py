@@ -26,7 +26,7 @@ class MyClient(discord.Client):
 			time_now = datetime.utcnow()
 			await date_channel.edit(name=f'Date: {time_now.strftime("%d/%m")}')
 			await time_channel.edit(name=f'Time: {time_now.strftime("%H:%M")}')
-			time.sleep(30)
+			time.sleep(300)
 
 client = MyClient()
 client.run('ODIyOTgzMzgwNTA0Njc0MzY1.YFaNAA.MhsrRzbnebCgXC9v1eqW9DHYd5s')
