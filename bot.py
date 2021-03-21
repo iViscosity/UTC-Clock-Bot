@@ -1,5 +1,6 @@
 import discord
 import asyncio
+import time
 
 from datetime import datetime
 from discord.ext import tasks, commands
@@ -19,12 +20,13 @@ class MyClient(discord.Client):
 		print('Starting update...')
 		date_channel = self.get_channel(823000204810125352)
 		time_channel = self.get_channel(822987807743016970)
-		time = datetime.utcnow()
 
 		while True:
-			await date_channel.edit(name=f'Date: {time.strftime("%d/%m")}')
-			await time_channel.edit(name=f'Time: {time.strftime("%H:%M")}')
-			await asyncio.sleep(60)
+			print('Updating!')
+			time_now = datetime.utcnow()
+			await date_channel.edit(name=f'Date: {time_now.strftime("%d/%m")}')
+			await time_channel.edit(name=f'Time: {time_now.strftime("%H:%M")}')
+			time.sleep(30)
 
 client = MyClient()
 client.run('ODIyOTgzMzgwNTA0Njc0MzY1.YFaNAA.MhsrRzbnebCgXC9v1eqW9DHYd5s')
