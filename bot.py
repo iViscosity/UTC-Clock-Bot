@@ -1,6 +1,7 @@
 import discord
 import asyncio
 import time
+import os
 
 from datetime import datetime
 from discord.ext import tasks, commands
@@ -37,4 +38,4 @@ class MyClient(discord.Client):
 			time.sleep(300)
 
 client = MyClient()
-client.run('ODIyOTgzMzgwNTA0Njc0MzY1.YFaNAA.MhsrRzbnebCgXC9v1eqW9DHYd5s')
+client.run(os.environ.get("BOT_TOKEN"))
