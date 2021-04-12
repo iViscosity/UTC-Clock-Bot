@@ -19,8 +19,8 @@ class MyClient(discord.Client):
 
 	async def update_channel(self):
 		print('Starting update...')
-		date_channel = self.get_channel(823000204810125352)
-		time_channel = self.get_channel(822987807743016970)
+		date_channel = self.get_channel(831255394793947237)
+		time_channel = self.get_channel(831255432705343528)
 
 		while True:
 			minutes_now = datetime.utcnow().strftime("%M")
